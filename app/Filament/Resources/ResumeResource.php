@@ -99,7 +99,7 @@ class ResumeResource extends Resource
             ])
             ->groups([
                 Group::make('discipline.name')
-                    ->label('Nome')
+                    ->label('Disciplina')
                     ->collapsible(),
             ])
             ->actions([
