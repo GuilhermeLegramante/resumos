@@ -10,6 +10,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Grouping\Group;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -78,6 +79,7 @@ class ResumeResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('note')
                     ->label('Anotação')
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('path')
                     ->label('Arquivo'),
@@ -94,6 +96,11 @@ class ResumeResource extends Resource
             ])
             ->filters([
                 //
+            ])
+            ->groups([
+                Group::make('discipline.name')
+                    ->label('Nome')
+                    ->collapsible(),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
