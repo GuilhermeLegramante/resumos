@@ -54,7 +54,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('Resumos da Tina')
             ->sidebarCollapsibleOnDesktop()
             ->brandLogo(asset('img/logo.png'))
-            ->brandLogoHeight(fn () => auth()->check() ? '6rem' : '10rem')
+            ->brandLogoHeight(fn () => auth()->check() ? '6rem' : '8rem')
             ->favicon(asset('img/logo.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
