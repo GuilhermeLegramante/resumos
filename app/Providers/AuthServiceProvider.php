@@ -3,7 +3,14 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+
+use App\Models\Discipline;
+use App\Models\Resume;
+use App\Policies\ActivityPolicy;
+use App\Policies\DisciplinePolicy;
+use App\Policies\ResumePolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Spatie\Activitylog\Models\Activity;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,6 +21,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        Resume::class => ResumePolicy::class,
+        Activity::class => ActivityPolicy::class,
+        Discipline::class => DisciplinePolicy::class,
     ];
 
     /**
